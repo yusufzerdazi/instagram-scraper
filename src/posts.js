@@ -238,6 +238,8 @@ const scrapePosts = async (page, request, itemSpec, entryData, requestQueue) => 
         // usable by appending https://www.instagram.com/explore/locations/ to see the location
         locationId: (item.node.location && item.node.location.id) || null,
         ownerUsername: (item.node.owner && item.node.owner.username) || null,
+        title: item.title || null,
+        thumbnail: item.thumbnail_src || null
     })).slice(0, request.userData.limit);
 
     for (const post of output) {
