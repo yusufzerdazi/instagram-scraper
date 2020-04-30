@@ -184,6 +184,8 @@ const scrapePost = (request, itemSpec, entryData) => {
         timestamp: new Date(parseInt(item.taken_at_timestamp, 10) * 1000),
         locationName: (item.location && item.location.name) || null,
         ownerUsername: (item.owner && item.owner.username) || null,
+        title: item.title || null,
+        thumbnail: item.thumbnail_src || null
     };
 };
 
